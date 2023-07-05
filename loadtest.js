@@ -7,4 +7,10 @@ export default function () {
         'is status 200': (result) => result.status === 200,
         'body contains text': (result) => result.body.includes('Collection of simple web-pages suitable for load testing.')
     })
+
+    res = http.get('http://test.k6.io/news.php', {tags: {'name': 'home'}})
+    check(res, {
+        'is status 200': (result) => result.status === 200,
+        'body contains text': (result) => result.body.includes('In the news')
+    })
 }
