@@ -1,7 +1,16 @@
 {
-  "vus": 2000,
-  "iterations": 5000,
-  "duration": "30s"
+  "scenarios": {
+    "warmup": {
+      "executor": "shared-iterations",
+      "maxDuration": "30s",
+      "iterations": 50,
+      "vus": 20
+    },
+    "loadTest": {
+      "executor": "shared-iterations",
+      "maxDuration": "30s",
+      "iterations": 500,
+      "vus": 200
+    }
+  }
 }
-
-
