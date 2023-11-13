@@ -14,5 +14,25 @@
       "vus": 200,
       "startTime": "60s"
     }
+  },
+  "thresholds": {
+    "http_req_duration{scenario:warmup}": [
+      {
+        "threshold": "p(50)<1000",
+        "abortOnFail": false
+      }
+    ],
+    "http_req_failed{scenario:warmup}": [
+      "rate<50"
+    ],
+    "http_req_duration{scenario:loadTest}": [
+      {
+        "threshold": "p(95)<500",
+        "abortOnFail": false
+      }
+    ],
+    "http_req_failed{scenario:loadTest}": [
+      "rate<1"
+    ]
   }
 }
