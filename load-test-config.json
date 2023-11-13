@@ -4,13 +4,15 @@
       "executor": "shared-iterations",
       "maxDuration": "30s",
       "iterations": 50,
-      "vus": 20
+      "vus": 20,
+      "startTime": "0s"
     },
     "loadTest": {
       "executor": "shared-iterations",
       "maxDuration": "30s",
       "iterations": 500,
-      "vus": 200
+      "vus": 200,
+      "startTime": "60s"
     }
   }
 }
