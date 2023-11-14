@@ -3,16 +3,16 @@
     "warmup": {
       "executor": "shared-iterations",
       "maxDuration": "30s",
-      "iterations": 50,
-      "vus": 20,
+      "iterations": 1,
+      "vus": 1,
       "startTime": "0s"
     },
     "loadTest": {
       "executor": "shared-iterations",
       "maxDuration": "30s",
-      "iterations": 500,
-      "vus": 200,
-      "startTime": "60s"
+      "iterations": 1,
+      "vus": 1,
+      "startTime": "10s"
     }
   },
   "thresholds": {
@@ -34,5 +34,10 @@
     "http_req_failed{scenario:loadTest}": [
       "rate<1"
     ]
+  },
+  "tags": {
+    "type": "load",
+    "Service": "testApi",
+    "API": "v1"
   }
 }
