@@ -1,10 +1,9 @@
 import http from 'k6/http';
 import {check} from 'k6';
-import {setTags} from "./helper.js";
+import {setTags} from "./../../helper.js";
 
 export default function () {
     setTags();
-    console.log(execution.vu.tags)
 
     let res = http.get('http://test.k6.io');
     check(res, {
