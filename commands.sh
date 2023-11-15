@@ -7,6 +7,9 @@ k6 run v1/test.k6.io/test.js --out json=summary/test.json --config v1/test.k6.io
 #Build docker image
 docker build . -t k6_learning
 
+#Rebuild docker image
+docker build . -t k6_learning --no-cache
+
 #run tests with docker image
 docker run -i -v $(pwd):/home/k6 k6_learning \
 k6 run v1/test.k6.io/test.js \
