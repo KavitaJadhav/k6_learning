@@ -3,14 +3,14 @@
     "warmup": {
       "executor": "shared-iterations",
       "maxDuration": "30s",
-      "iterations": 1,
+      "iterations": 10,
       "vus": 1,
       "startTime": "0s"
     },
     "loadTest": {
       "executor": "shared-iterations",
       "maxDuration": "30s",
-      "iterations": 1,
+      "iterations": 10,
       "vus": 1,
       "startTime": "10s"
     }

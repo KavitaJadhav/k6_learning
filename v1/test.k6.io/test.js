@@ -2,12 +2,18 @@ import http from 'k6/http';
 import {check} from 'k6';
 import {setTags} from "./../../helper.js";
 import * as db from './../../db.js';
+let user_ids;
 
-export default function () {
+export function setup() {
+    return {
+        'userIds':  db.getUserIds()
+    }
+}
+
+export default function (data) {
     setTags();
 
-    let user_ids = db.getUserIds()
-    console.log(user_ids)
+    user_ids = data['userIds']
 
     let res = http.get('http://test.k6.io');
     check(res, {
