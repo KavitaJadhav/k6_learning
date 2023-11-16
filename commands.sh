@@ -42,4 +42,5 @@ k6 run v1/test.k6.io/test.js \
 --out json=summary/test.json \
 -e ENVIRONMENT='uat' \
 -e K6_PROMETHEUS_RW_SERVER_URL=http://docker.for.mac.localhost:9090/api/v1/write \
+-e K6_PROMETHEUS_RW_TREND_STATS='p(95),p(99),min,max,med,avg' \
 -o experimental-prometheus-rw
